@@ -1,0 +1,9 @@
+document.querySelectorAll('.menu-tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      document.querySelectorAll('.menu-tab').forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false');});
+      document.querySelectorAll('.menu-panel').forEach(p=>p.classList.remove('active'));
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected','true');
+      document.querySelector('.menu-panel[data-panel="'+tab.dataset.tab+'"]').classList.add('active');
+    });
+  });
